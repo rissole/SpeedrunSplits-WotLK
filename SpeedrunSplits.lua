@@ -97,7 +97,7 @@ panel.RangeSlider:SetOrientation('HORIZONTAL')
 panel.RangeSlider.tooltipText = 'Number of levels (rows) displayed on screen for SpeedrunSplits'
 _G["SpeedrunSplitsRangeSliderLow"]:SetText("5");
 _G["SpeedrunSplitsRangeSliderHigh"]:SetText(MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()]-1);
-panel.RangeSlider:SetPoint("TOPLEFT", panel.FontSlider, "TOPRIGHT", 20, 0)
+panel.RangeSlider:SetPoint("TOPLEFT", panel.FontSlider, "BOTTOMLEFT", 0, -26)
 panel.RangeSlider:SetMinMaxValues(5,MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()]-1)
 panel.RangeSlider:SetValueStep(1)
 panel.RangeSlider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizontal")
@@ -107,7 +107,7 @@ panel.PBSlider:SetOrientation('HORIZONTAL')
 panel.PBSlider.tooltipText = 'The level for SpeedrunSplits to automatically save character times upon reaching with a time faster than previously set'
 _G["SpeedrunSplitsPBSliderLow"]:SetText("5");
 _G["SpeedrunSplitsPBSliderHigh"]:SetText(MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()]);
-panel.PBSlider:SetPoint("TOPLEFT", panel.RangeSlider, "TOPRIGHT", 20, 0)
+panel.PBSlider:SetPoint("TOPLEFT", panel.RangeSlider, "BOTTOMLEFT", 0, -26)
 panel.PBSlider:SetMinMaxValues(5,MAX_PLAYER_LEVEL_TABLE[GetExpansionLevel()])
 panel.PBSlider:SetValueStep(1)
 panel.PBSlider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizontal")
@@ -115,7 +115,7 @@ panel.PBSlider:SetThumbTexture("Interface\\Buttons\\UI-SliderBar-Button-Horizont
 panel.ShowHideCheckButton = CreateFrame("CheckButton", "SpeedrunSplitsShowHideCheckButton", panel, "ChatConfigCheckButtonTemplate");
 panel.ShowHideCheckButton.tooltip = "Show/Hide SpeedrunSplits";
 _G["SpeedrunSplitsShowHideCheckButtonText"]:SetText("Show SpeedrunSplits");
-panel.ShowHideCheckButton:SetPoint("TOPLEFT", panel.FontSlider, "BOTTOMLEFT", 0, -26);
+panel.ShowHideCheckButton:SetPoint("TOPLEFT", panel.PBSlider, "BOTTOMLEFT", 0, -26);
 
 panel.MoveCheckButton = CreateFrame("CheckButton", "SpeedrunSplitsMoveCheckButton", panel, "ChatConfigCheckButtonTemplate");
 panel.MoveCheckButton.tooltip = "SpeedrunSplits can be moved with the Interface Options window open";
@@ -145,7 +145,7 @@ panel.ColourCheckButton:SetPoint("TOPLEFT", panel.NextCheckButton, "BOTTOMLEFT",
 panel.SaveButton = CreateFrame("Button", "SpeedrunSplitsSaveButton", panel, "UIPanelButtonTemplate");
 panel.SaveButton:SetSize(144,22)
 _G["SpeedrunSplitsSaveButtonText"]:SetText("Save Current Times");
-panel.SaveButton:SetPoint("TOPLEFT", panel.PBSlider, "BOTTOMLEFT", 0, -20);
+panel.SaveButton:SetPoint("TOPLEFT", panel.ColourCheckButton, "BOTTOMLEFT", 0, -16);
 
 panel.PrintButton = CreateFrame("Button", "SpeedrunSplitsPrintButton", panel, "UIPanelButtonTemplate");
 panel.PrintButton:SetSize(144,22)
@@ -353,7 +353,7 @@ function f:OnEvent(event, arg1, arg2)
 		SpeedrunSplitsXPWindow = false
 		f:RegisterEvent("TIME_PLAYED_MSG")
 		RequestTimePlayed()
-		panel.SaveButton:SetEnabled(true)
+		panel.SaveButton:Show()
 		SpeedrunSplitsRange(SpeedrunSplitsOptions["LevelRange"], arg1)
 	elseif (event == "TIME_PLAYED_MSG") then
 		f:UnregisterEvent("TIME_PLAYED_MSG")
@@ -626,7 +626,7 @@ function SpeedrunSplitsSave()
 		end
 	end
 	print("[SpeedrunSplits] Current character times have been recorded up to level", SpeedrunSplitsLevel, ". Times will be compared against for future runs.")
-	panel.SaveButton:SetEnabled(false)
+	panel.SaveButton:Hide()
 end
 
 function SpeedrunSplitsPrint()
