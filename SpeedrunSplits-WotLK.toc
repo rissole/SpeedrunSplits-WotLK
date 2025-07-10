@@ -2,7 +2,7 @@
 ## Author: Karmond / rissole
 ## Title: SpeedrunSplits |cff1784d1(WotLK)|r
 ## Notes: Tracks /played time per level onscreen
-## Version: 3.1-wotlk
+## Version: 1.0.0
 ## OptionalDeps: 
 ## SavedVariables: SpeedrunSplitsPB, SpeedrunSplitsGold, SpeedrunSplitsOptions
 ## SavedVariablesPerCharacter: SpeedrunSplits, ExpansionLevel, ExpansionDiscount, ExpansionDiscountTotal, ExpansionTime
