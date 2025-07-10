@@ -1,5 +1,7 @@
 # SpeedrunSplits-WotLK
 
+![Screenshot of SpeedrunSplits](https://legacy-wow.com/wp-content/uploads/2019/06/homepublicimgupuploadsSpeedrunSplits3.png)
+
 SpeedrunSplits is a World of Warcraft WotLK (3.3.5a) addon that shows you the time you spent per level and more. The functionality was copied from [SpeedrunSplits](https://www.curseforge.com/wow/addons/speedrunsplits), and updated/reworked to support WotLK.
 
 # How to install
