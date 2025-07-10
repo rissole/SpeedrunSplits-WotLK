@@ -1,6 +1,6 @@
 ## Interface: 30300
 ## Author: Karmond / rissole
-## Title: SpeedrunSplits
+## Title: SpeedrunSplits |cff1784d1(WotLK)|r
 ## Notes: Tracks /played time per level onscreen
 ## Version: 3.1-wotlk
 ## OptionalDeps: 
