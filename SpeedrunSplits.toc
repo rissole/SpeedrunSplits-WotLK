@@ -1,0 +1,9 @@
+## Interface: 30300
+## Author: Karmond / rissole
+## Title: SpeedrunSplits
+## Notes: Tracks /played time per level onscreen
+## Version: 3.1-wotlk
+## OptionalDeps: 
+## SavedVariables: SpeedrunSplitsPB, SpeedrunSplitsGold, SpeedrunSplitsOptions
+## SavedVariablesPerCharacter: SpeedrunSplits, ExpansionLevel, ExpansionDiscount, ExpansionDiscountTotal, ExpansionTime
+SpeedrunSplits.lua
